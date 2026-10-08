@@ -1,12 +1,12 @@
-#pragma once
+п»ї#pragma once
 #include <string>
 #include <vector>
 
 class Engine {
 private:
-    std::string name;   // название двигателя
-    int power;          // мощность, л.с.
-    double volume;      // объём, л
+    std::string name;   // РЅР°Р·РІР°РЅРёРµ РґРІРёРіР°С‚РµР»СЏ
+    int power;          // РјРѕС‰РЅРѕСЃС‚СЊ, Р».СЃ.
+    double volume;      // РѕР±СЉС‘Рј, Р»
 
 public:
     Engine(const std::string& name, int power, double volume);
@@ -18,7 +18,7 @@ public:
 class Car {
 private:
     std::string model;
-    std::vector<Engine> engines; // композиция
+    std::vector<Engine> engines; // РєРѕРјРїРѕР·РёС†РёСЏ
 
 public:
     explicit Car(const std::string& model);

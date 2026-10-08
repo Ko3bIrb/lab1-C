@@ -1,19 +1,19 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <locale>
 #include "library.h"
 
 int main() {
     setlocale(LC_ALL, "ru");
 
-    std::cout << "Âñåãî êíèã ñåé÷àñ: " << Book::getBookCount() << "\n\n";
+    std::cout << "Ð’ÑÐµÐ³Ð¾ ÐºÐ½Ð¸Ð³ ÑÐµÐ¹Ñ‡Ð°Ñ: " << Book::getBookCount() << "\n\n";
 
-    Book b1("Âîéíà è ìèð", "Ë. Òîëñòîé", 1869);
-    Book b2("Ïðåñòóïëåíèå è íàêàçàíèå", "Ô. Äîñòîåâñêèé", 1866);
-    Book b3("Åâãåíèé Îíåãèí", "À. Ïóøêèí", 1833);
+    Book b1("Ð’Ð¾Ð¹Ð½Ð° Ð¸ Ð¼Ð¸Ñ€", "Ð›. Ð¢Ð¾Ð»ÑÑ‚Ð¾Ð¹", 1869);
+    Book b2("ÐŸÑ€ÐµÑÑ‚ÑƒÐ¿Ð»ÐµÐ½Ð¸Ðµ Ð¸ Ð½Ð°ÐºÐ°Ð·Ð°Ð½Ð¸Ðµ", "Ð¤. Ð”Ð¾ÑÑ‚Ð¾ÐµÐ²ÑÐºÐ¸Ð¹", 1866);
+    Book b3("Ð•Ð²Ð³ÐµÐ½Ð¸Ð¹ ÐžÐ½ÐµÐ³Ð¸Ð½", "Ð. ÐŸÑƒÑˆÐºÐ¸Ð½", 1833);
 
-    std::cout << "\nÂñåãî êíèã ñåé÷àñ: " << Book::getBookCount() << "\n\n";
+    std::cout << "\nÐ’ÑÐµÐ³Ð¾ ÐºÐ½Ð¸Ð³ ÑÐµÐ¹Ñ‡Ð°Ñ: " << Book::getBookCount() << "\n\n";
 
-    Library* lib1 = Library::getInstance("Ãîðîäñêàÿ áèáëèîòåêà");
+    Library* lib1 = Library::getInstance("Ð“Ð¾Ñ€Ð¾Ð´ÑÐºÐ°Ñ Ð±Ð¸Ð±Ð»Ð¸Ð¾Ñ‚ÐµÐºÐ°");
     Library* lib2 = Library::getInstance();
 
     std::cout << "\nlib1 == lib2: " << (lib1 == lib2 ? "true" : "false") << "\n\n";
@@ -24,17 +24,17 @@ int main() {
 
     lib1->print();
 
-    std::cout << "\nÊíèãè âñ¸ åù¸ ñóùåñòâóþò:\n";
+    std::cout << "\nÐšÐ½Ð¸Ð³Ð¸ Ð²ÑÑ‘ ÐµÑ‰Ñ‘ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÑŽÑ‚:\n";
     b1.print();
     b2.print();
     b3.print();
 
-    std::cout << "\nÂñåãî êíèã ñåé÷àñ: " << Book::getBookCount() << "\n";
+    std::cout << "\nÐ’ÑÐµÐ³Ð¾ ÐºÐ½Ð¸Ð³ ÑÐµÐ¹Ñ‡Ð°Ñ: " << Book::getBookCount() << "\n";
 
     Library::destroyInstance();
 
-    std::cout << "\nÏîñëå çàêðûòèÿ áèáëèîòåêè êíèãè âñ¸ åù¸ æèâû:\n";
-    std::cout << "Âñåãî êíèã ñåé÷àñ: " << Book::getBookCount() << "\n";
+    std::cout << "\nÐŸÐ¾ÑÐ»Ðµ Ð·Ð°ÐºÑ€Ñ‹Ñ‚Ð¸Ñ Ð±Ð¸Ð±Ð»Ð¸Ð¾Ñ‚ÐµÐºÐ¸ ÐºÐ½Ð¸Ð³Ð¸ Ð²ÑÑ‘ ÐµÑ‰Ñ‘ Ð¶Ð¸Ð²Ñ‹:\n";
+    std::cout << "Ð’ÑÐµÐ³Ð¾ ÐºÐ½Ð¸Ð³ ÑÐµÐ¹Ñ‡Ð°Ñ: " << Book::getBookCount() << "\n";
 
     return 0;
 }

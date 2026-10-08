@@ -1,4 +1,4 @@
-#include "library.h"
+ï»¿#include "library.h"
 #include <iostream>
 
 int Book::bookCount = 0;
@@ -7,13 +7,13 @@ Library* Library::instance = nullptr;
 Book::Book(const std::string& title, const std::string& author, int year)
     : title(title), author(author), year(year) {
     ++bookCount;
-    std::cout << "Ñîçäàíà êíèãà \"" << title
+    std::cout << "Ð¡Ð¾Ð·Ð´Ð°Ð½Ð° ÐºÐ½Ð¸Ð³Ð° \"" << title
         << "\" (" << author << ", " << year << ")\n";
 }
 
 Book::~Book() {
     --bookCount;
-    std::cout << "Óäàëåíà êíèãà \"" << title << "\"\n";
+    std::cout << "Ð£Ð´Ð°Ð»ÐµÐ½Ð° ÐºÐ½Ð¸Ð³Ð° \"" << title << "\"\n";
 }
 
 std::string Book::getTitle() const {
@@ -22,7 +22,7 @@ std::string Book::getTitle() const {
 
 void Book::print() const {
     std::cout << "  - \"" << title << "\", "
-        << author << ", " << year << " ã.\n";
+        << author << ", " << year << " Ð³.\n";
 }
 
 int Book::getBookCount() {
@@ -31,12 +31,12 @@ int Book::getBookCount() {
 
 Library::Library(const std::string& name)
     : name(name) {
-    std::cout << "Îòêðûòà áèáëèîòåêà \"" << name << "\"\n";
+    std::cout << "ÐžÑ‚ÐºÑ€Ñ‹Ñ‚Ð° Ð±Ð¸Ð±Ð»Ð¸Ð¾Ñ‚ÐµÐºÐ° \"" << name << "\"\n";
 }
 
 Library::~Library() {
-    std::cout << "Çàêðûòà áèáëèîòåêà \"" << name << "\"\n";
-    // êíèãè ÍÅ óäàëÿþòñÿ — ýòî àãðåãàöèÿ
+    std::cout << "Ð—Ð°ÐºÑ€Ñ‹Ñ‚Ð° Ð±Ð¸Ð±Ð»Ð¸Ð¾Ñ‚ÐµÐºÐ° \"" << name << "\"\n";
+    // ÐºÐ½Ð¸Ð³Ð¸ ÐÐ• ÑƒÐ´Ð°Ð»ÑÑŽÑ‚ÑÑ â€” ÑÑ‚Ð¾ Ð°Ð³Ñ€ÐµÐ³Ð°Ñ†Ð¸Ñ
 }
 
 Library* Library::getInstance(const std::string& name) {
@@ -53,18 +53,18 @@ void Library::destroyInstance() {
 
 void Library::addBook(Book* book) {
     if (book == nullptr) {
-        std::cout << "Íåëüçÿ äîáàâèòü nullptr â áèáëèîòåêó\n";
+        std::cout << "ÐÐµÐ»ÑŒÐ·Ñ Ð´Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ nullptr Ð² Ð±Ð¸Ð±Ð»Ð¸Ð¾Ñ‚ÐµÐºÑƒ\n";
         return;
     }
     books.push_back(book);
-    std::cout << "Êíèãà \"" << book->getTitle()
-        << "\" äîáàâëåíà â áèáëèîòåêó \"" << name << "\"\n";
+    std::cout << "ÐšÐ½Ð¸Ð³Ð° \"" << book->getTitle()
+        << "\" Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð° Ð² Ð±Ð¸Ð±Ð»Ð¸Ð¾Ñ‚ÐµÐºÑƒ \"" << name << "\"\n";
 }
 
 void Library::print() const {
-    std::cout << "Áèáëèîòåêà \"" << name << "\" ñîäåðæèò:\n";
+    std::cout << "Ð‘Ð¸Ð±Ð»Ð¸Ð¾Ñ‚ÐµÐºÐ° \"" << name << "\" ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ñ‚:\n";
     if (books.empty()) {
-        std::cout << "  (íåò êíèã)\n";
+        std::cout << "  (Ð½ÐµÑ‚ ÐºÐ½Ð¸Ð³)\n";
         return;
     }
     for (const auto* book : books) {

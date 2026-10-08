@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <string>
 #include <vector>
 
@@ -8,7 +8,7 @@ private:
     std::string author;
     int year;
 
-    static int bookCount; // счётчик всех созданных книг
+    static int bookCount; // СЃС‡С‘С‚С‡РёРє РІСЃРµС… СЃРѕР·РґР°РЅРЅС‹С… РєРЅРёРі
 
 public:
     Book(const std::string& title, const std::string& author, int year);
@@ -23,9 +23,9 @@ public:
 class Library {
 private:
     std::string name;
-    std::vector<Book*> books; // агрегация
+    std::vector<Book*> books; // Р°РіСЂРµРіР°С†РёСЏ
 
-    static Library* instance; // единственный экземпляр
+    static Library* instance; // РµРґРёРЅСЃС‚РІРµРЅРЅС‹Р№ СЌРєР·РµРјРїР»СЏСЂ
 
     explicit Library(const std::string& name);
     ~Library();
@@ -34,7 +34,7 @@ private:
     Library& operator=(const Library&) = delete;
 
 public:
-    static Library* getInstance(const std::string& name = "Городская библиотека");
+    static Library* getInstance(const std::string& name = "Р“РѕСЂРѕРґСЃРєР°СЏ Р±РёР±Р»РёРѕС‚РµРєР°");
 
     void addBook(Book* book);
     void print() const;

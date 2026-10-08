@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <locale>
 #include "car.h"
 
@@ -13,8 +13,8 @@ int main() {
 
         car.print();
 
-        std::cout << "Âûõîä èç âíóòðåííåãî áëîêà\n";
-    } // çäåñü car óíè÷òîæàåòñÿ, à âìåñòå ñ íèì — âñå Engine
+        std::cout << "Ð’Ñ‹Ñ…Ð¾Ð´ Ð¸Ð· Ð²Ð½ÑƒÑ‚Ñ€ÐµÐ½Ð½ÐµÐ³Ð¾ Ð±Ð»Ð¾ÐºÐ°\n";
+    } // Ð·Ð´ÐµÑÑŒ car ÑƒÐ½Ð¸Ñ‡Ñ‚Ð¾Ð¶Ð°ÐµÑ‚ÑÑ, Ð° Ð²Ð¼ÐµÑÑ‚Ðµ Ñ Ð½Ð¸Ð¼ â€” Ð²ÑÐµ Engine
 
     return 0;
 }

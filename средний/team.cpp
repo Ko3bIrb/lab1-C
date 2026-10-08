@@ -1,18 +1,18 @@
-#include "team.h"
+п»ї#include "team.h"
 #include <iostream>
 
-int Player::playerCount = 0; // определение статического поля
+int Player::playerCount = 0; // РѕРїСЂРµРґРµР»РµРЅРёРµ СЃС‚Р°С‚РёС‡РµСЃРєРѕРіРѕ РїРѕР»СЏ
 
 Player::Player(const std::string& name, int number, const std::string& role)
     : name(name), number(number), role(role) {
     ++playerCount;
-    std::cout << "Создан игрок \"" << name
-        << "\" (номер " << number << ", " << role << ")\n";
+    std::cout << "РЎРѕР·РґР°РЅ РёРіСЂРѕРє \"" << name
+        << "\" (РЅРѕРјРµСЂ " << number << ", " << role << ")\n";
 }
 
 Player::~Player() {
     --playerCount;
-    std::cout << "Удалён игрок \"" << name << "\"\n";
+    std::cout << "РЈРґР°Р»С‘РЅ РёРіСЂРѕРє \"" << name << "\"\n";
 }
 
 std::string Player::getName() const {
@@ -21,8 +21,8 @@ std::string Player::getName() const {
 
 void Player::print() const {
     std::cout << "  - " << name
-        << ", номер " << number
-        << ", амплуа: " << role << "\n";
+        << ", РЅРѕРјРµСЂ " << number
+        << ", Р°РјРїР»СѓР°: " << role << "\n";
 }
 
 int Player::getPlayerCount() {
@@ -31,28 +31,28 @@ int Player::getPlayerCount() {
 
 Team::Team(const std::string& name)
     : name(name) {
-    std::cout << "Создана команда \"" << name << "\"\n";
+    std::cout << "РЎРѕР·РґР°РЅР° РєРѕРјР°РЅРґР° \"" << name << "\"\n";
 }
 
 Team::~Team() {
-    std::cout << "Удалена команда \"" << name << "\"\n";
-    // игроки НЕ удаляются — это агрегация
+    std::cout << "РЈРґР°Р»РµРЅР° РєРѕРјР°РЅРґР° \"" << name << "\"\n";
+    // РёРіСЂРѕРєРё РќР• СѓРґР°Р»СЏСЋС‚СЃСЏ вЂ” СЌС‚Рѕ Р°РіСЂРµРіР°С†РёСЏ
 }
 
 void Team::addPlayer(Player* player) {
     if (player == nullptr) {
-        std::cout << "Нельзя добавить nullptr в команду\n";
+        std::cout << "РќРµР»СЊР·СЏ РґРѕР±Р°РІРёС‚СЊ nullptr РІ РєРѕРјР°РЅРґСѓ\n";
         return;
     }
     players.push_back(player);
-    std::cout << "Игрок \"" << player->getName()
-        << "\" добавлен в команду \"" << name << "\"\n";
+    std::cout << "РРіСЂРѕРє \"" << player->getName()
+        << "\" РґРѕР±Р°РІР»РµРЅ РІ РєРѕРјР°РЅРґСѓ \"" << name << "\"\n";
 }
 
 void Team::print() const {
-    std::cout << "Команда \"" << name << "\":\n";
+    std::cout << "РљРѕРјР°РЅРґР° \"" << name << "\":\n";
     if (players.empty()) {
-        std::cout << "(нет игроков)\n";
+        std::cout << "(РЅРµС‚ РёРіСЂРѕРєРѕРІ)\n";
         return;
     }
     for (const auto* player : players) {

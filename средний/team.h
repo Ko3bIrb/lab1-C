@@ -1,14 +1,14 @@
-#pragma once
+п»ї#pragma once
 #include <string>
 #include <vector>
 
 class Player {
 private:
-    std::string name;   // имя игрока
-    int number;         // номер
-    std::string role;   // амплуа
+    std::string name;   // РёРјСЏ РёРіСЂРѕРєР°
+    int number;         // РЅРѕРјРµСЂ
+    std::string role;   // Р°РјРїР»СѓР°
 
-    static int playerCount; // счётчик всех созданных игроков
+    static int playerCount; // СЃС‡С‘С‚С‡РёРє РІСЃРµС… СЃРѕР·РґР°РЅРЅС‹С… РёРіСЂРѕРєРѕРІ
 
 public:
     Player(const std::string& name, int number, const std::string& role);
@@ -23,7 +23,7 @@ public:
 class Team {
 private:
     std::string name;
-    std::vector<Player*> players; // агрегация: игроки существуют отдельно
+    std::vector<Player*> players; // Р°РіСЂРµРіР°С†РёСЏ: РёРіСЂРѕРєРё СЃСѓС‰РµСЃС‚РІСѓСЋС‚ РѕС‚РґРµР»СЊРЅРѕ
 
 public:
     explicit Team(const std::string& name);
